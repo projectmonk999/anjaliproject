@@ -1,0 +1,33 @@
+.header{
+    font-size: 64px;
+    text-align: center;
+    font-family:'Pacifico' ;
+    font-weight: 100;
+    color: rgb(41, 8, 8);
+    background-color: rgb(196, 170, 171);
+    margin-bottom: 20px;
+}
+.image{
+    height: 280px;
+    width: 350px;
+}
+.filter{
+    width:20%;
+    margin-left:1050px;
+    margin-bottom: 10px;
+}
+.comp1{
+    float: left;
+    margin-left: 43px;
+    margin-right: 43px;
+}
+.comp2{
+    float:left;
+    margin-left: 43px;
+    margin-right: 43px;
+}
+.comp3{
+    float: left;
+    margin-left: 43px;
+    margin-right: 43px;
+}

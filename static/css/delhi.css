@@ -1,0 +1,106 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+.head{
+    background: rgba(255, 255,255, 0.2);
+}
+.box{
+    float: right;
+    width: 35%;
+    height: 74vh;
+    margin-top: 16px;
+    background: rgba(255, 255,255, 0.6);
+    box-shadow: -1px 4px 28px 0px rgba(0,0,0,0.9);
+    border-radius: 10px 8px;
+    margin-right: 10px
+}
+.delhi{
+    text-align: center;
+    font-size:80px ;
+    padding-top:40px ;
+    text-decoration: solid;
+    font-family:'Pacifico';
+    color: rgb(77, 7, 7);
+}
+.header{
+    text-align: center;
+    background: url(delhi.png);
+    height: 60vh;
+    font-size:50px ;
+    padding-top:40px ;
+    background-size: cover;
+    background-color: transparent;
+    margin-bottom: 20px;
+}
+.header:after{
+    position: absolute;
+    background: rgba(0, 0, 0, 0.7);
+}
+.desc{
+    text-align: center;
+    font-size: 30px;
+    color: rgb(24, 6, 6);
+    font-family: cursive;
+}
+.info{
+    float: left;
+    width:60%;
+    height:10vh;
+    font-size:25px ;
+    padding-top: 15px;
+    border-radius: 6px 6px;
+    margin-top: 10px;
+    margin-left: 10px;
+    background: rgba(255, 255,255, 0.2);
+    box-shadow: -1px 4px 28px 0px rgba(0,0,0,0.7);
+    margin-bottom: 10px;
+}
+.info a{
+    font-family:'Acme';
+    color: rgb(20, 1, 1);
+}
+.button{
+    text-align: center;
+}
+input[type="submit"]:hover{
+    background: rgb(10, 1, 1);
+}
+input[type="submit"]{
+    margin-top: 20px;
+    font-size: 25px;
+    width: 30%;
+    border-radius: 4px 4px;
+    cursor: pointer;
+    background:  rgb(77, 7, 7);
+    margin-bottom: 30px;
+    color: white;
+    height: 8vh;
+    margin-right: 261px;
+    margin-left: 264px;
+}
+.info span{
+    line-height: 17px;
+    width: 55px;
+    margin-left: 10px;
+}
+.readmore-btn{
+    text-decoration: none;
+    color: black;
+}
+.readmore-btn:hover{
+    text-decoration: underline;
+}
+.facts{
+    text-decoration: solid;
+    font-size: 37px;
+    text-align: center;
+    font-family: 'Dancing Script';
+}
+
+.list-unstyled{
+    padding-left: 5%;
+    font-size: 20px;
+    list-style-position: inside;
+}

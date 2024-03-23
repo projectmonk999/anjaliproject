@@ -1,0 +1,33 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+.head{
+    text-align: center;
+    font-family: 'Pacifico' ;
+    font-size: 50px;
+    text-decoration: solid;
+}
+.image{
+    width: 355px;
+    height: 200px;
+}
+.bcols{
+    margin-top: 40px;
+    background: rgba(255, 255,255, 0.2);
+    box-shadow: -1px 4px 28px 0px rgba(0,0,0,0.3);
+    float: left;
+    margin-right: 30px;
+    margin-left: 50px;
+}
+.place p{
+    margin-top: 20px;
+    font-family: cursive;
+    font-size: 30px;
+    text-decoration: solid;
+}
+.form{
+    width: 30%;
+    float: right;
+}

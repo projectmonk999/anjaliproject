@@ -1,0 +1,45 @@
+{% extends 'basic.html' %} {% block title %}Book{% endblock title %} {% block body %}
+<div class="container">
+
+    <div class="row text-white mt-5">
+        <div class="col-md-6 col-lg-6 col-xlg-6 col-sm-12 mx-auto my-4 ">
+
+            <form action="/user/book-room/book" method="POST">
+                {%csrf_token%}
+                {%load static %}
+                <div class="form-group">
+                    <label for="username">Location:</label>
+                    <input type="text" class="form-control " id="location" name="location" disabled value={{room.hotel.location}}>
+                </div>
+                <div class="form-group">
+                    <label for="person">username:</label>
+                    <input type="text" class="form-control " id="username" name="username" required="true" value={{request.user}}>
+                </div>
+                <div class="form-group">
+                    <label for="person">Total:</label>
+                    <input type="number" class="form-control " id="person" name="person" min="1" max={{room.capacity}} required="true" value={{room.capacity}}>
+                </div>
+                <div class="form-group">
+                    <label for="password2">Date:</label>
+                    <input type="date" class="form-control " id="cin" placeholder="check in " name="check_in" required="True">
+                </div>
+                <div class="form-group">
+                    <label for="password2">Date:</label>
+                    <input type="date" class="form-control " id="cout" placeholder="check out " name="check_out" required="True">
+                </div>
+                <div class="form-group">
+                    <label for="username">Name:</label>
+                    <input type="text" class="form-control " id="roomtype" name="roomtype" disabled value={{room.get_room_type_display}}>
+                </div>
+                <div class="form-group">
+                    <label for="password2">Price:</label>
+                    <input type="number" class="form-control " id="price" placeholder="price " name="price" disabled value={{room.price}}>
+                </div>
+                <button type="submit" class="btn btn-primary">Appoint</button>
+                <input type="hidden" name="room_id" value={{room.id}}>
+
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock body %}

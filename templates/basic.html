@@ -1,0 +1,173 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> {% block title %}
+        {% endblock title %}
+    </title>
+    <!--Cdn links for bootstrap-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'bootstrap\bootstrap.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    {% block css %}
+    {% endblock css %}
+    <style>
+        a {
+            text-decoration: none;
+        }
+
+        .navbar-dark {
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body style="height: 100%; background-color: black;">
+    <!--Header Section starts here-->
+    <div class="container-fluid px-0">
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+            <a class="navbar-brand text-bold" href="/"><b>DogMed</b></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto ">
+                    <li class="nav-item active">
+                        <a class="nav-link text-bold " href="/"> Home</a>
+                    </li>
+                    {% if user.is_staff %}
+                    <li class="nav-item active">
+                        <a class="nav-link text-bold" href="/staff/panel">Dashboard </a>
+                    </li>
+                    {% elif user.is_staff == False and user.is_authenticated %}
+                    <li class="nav-item active">
+                        <a class="nav-link text-bold" href="/user/bookings">Booked Appointment</a>
+                    </li>
+                    {% endif %}
+                    <li class="nav-item active">
+                        <a class="nav-link text-bold" href="/contact">Contact </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link text-bold" href="/home">Back</a>
+                    </li>
+                </ul>
+                {% if user.is_authenticated %}
+                <button class="btn btn-group text-white" data-toggle="modal" data-target="#forlogin">
+                    <b><i>DogMed : {{request.user}}</i></b><a href="/logout" class="nav-link">
+                        <button class="btn btn-outline-success text-white" data-toggle="modal" data-target="#forlogin">
+                            Logout
+                        </button></a>&nbsp; &nbsp;
+                </button>
+
+                {% else %}
+
+                <a href="/user" class="nav-link">
+                    <button class="btn btn-outline-success text-white" data-toggle="modal" data-target="#forlogin">
+                        User Login
+                    </button></a>
+                <a href="/staff" class="nav-link">
+                    <button class="btn btn-outline-success text-white">
+                        Staff/Doctor Login
+                    </button></a>
+                {% endif %}
+            </div>
+        </nav>
+    </div>
+    <!--Header Section Ends here-->
+
+    {% for message in messages %}
+    <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+        {{message}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    {% endfor %}
+
+    {% block body %}
+
+    {% endblock body %}
+    <footer class=" text-center text-white " style="background-color: black;">
+        <!-- Grid container -->
+        <div class="container p-4">
+            <!--Grid row-->
+            <div class="row">
+                <!--Grid column-->
+                <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+                    <h5 class="font-italic">DogMed</h5>
+                    <p>---------------------- </p>
+                </div>
+                <!--Grid column-->
+
+                <!--Grid column-->
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <div class="container">
+                        <!-- Section: Iframe --> 
+                        <section class="">
+                            <div class="row d-flex justify-content-center">
+                                <div class="col-lg-6">
+                                    <div class="ratio ratio-16x9">
+                                        <iframe class="shadow-1-strong rounded " src=" " title="YouTube video"
+                                            allowfullscreen></iframe>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <!-- Section: Iframe -->
+                    </div>
+                </div>
+                <!--Grid column-->
+            </div>
+            <!--Grid row-->
+        </div>
+        <!-- Grid container -->
+
+        <!-- Grid container -->
+
+        <div class="container p-4 pb-0">
+            <!-- Section: Social media -->
+            <section class="">
+                <!-- Facebook -->
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                        class="fab fa-facebook-f"></i></a>
+
+                <!-- Twitter -->
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                        class="fab fa-twitter"></i></a>
+
+                <!-- Google -->
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                        class="fab fa-google"></i></a>
+
+                <!-- Instagram -->
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                        class="fab fa-instagram"></i></a>
+
+                <!-- Linkedin -->
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                        class="fab fa-linkedin-in"></i></a>
+
+                <!-- Github -->
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                        class="fab fa-github"></i></a>
+            </section>
+            <!-- Section: Social media -->
+        </div>
+        <div class="text-center p-3" style="background-color: rgb(3, 100, 3);">
+            © 2024 Copyright:
+            <a class="text-white" href="">DogMed.com</a>
+        </div>
+    </footer>
+</body>
+{% block js %}
+{% endblock js %}
+
+</html>

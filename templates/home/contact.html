@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block title %} Contact{% endblock title %}
+
+{% block body %}
+<div class="container my-3 text-white" style="background-color: black;">
+<div class="text-center">
+  <h3><i>Contact Us..!</i></h3>
+</div>
+
+<form action="/contact" method="post">
+{% csrf_token %}
+  <div class="form-group ">
+    <label for="name">Name</label>
+    <input type="text" class="form-control" id="name" name="name"aria-describedby="name">
+  </div>
+
+  <div class="form-group">
+    <label for="email">Email address</label>
+    <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp">
+    <small id="emailHelp" class="form-text text-white">We'll never share your email with anyone else.</small>
+  </div>
+
+  <div class="form-group">
+    <label for="phone">Phone Number</label>
+    <input type="tel" class="form-control" id="phone" name="phone">
+  </div>
+  <div class="form-group">
+    <label for="content">Describe your issue :</label>
+    <textarea class="form-control" name="content" id="content" cols="30" rows="5"></textarea>
+  </div>
+  <button type="submit" class="btn btn-outline-success mb-3">Submit</button>
+</form>
+</div>
+<footer class=" text-center text-white " style="background-color: black;">
+  <!-- Grid container -->
+  <div class="container p-4">
+      <!--Grid row-->
+      <div class="row">
+          <!--Grid column-->
+          <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+              <h5 class="font-italic">DogMed</h5>
+              <p>----------------------</p>
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+              <div class="container">
+                  <!-- Section: Iframe --> 
+                  <section class="">
+                      <div class="row d-flex justify-content-center">
+                          <div class="col-lg-6">
+                              <div class="ratio ratio-16x9">
+                                  <iframe class="shadow-1-strong rounded " src=" " title="YouTube video"
+                                      allowfullscreen></iframe>
+                              </div>
+                          </div>
+                      </div>
+                  </section>
+                  <!-- Section: Iframe -->
+              </div>
+          </div>
+          <!--Grid column-->
+      </div>
+      <!--Grid row-->
+  </div>
+  <div class="text-center p-3" style="background-color: rgb(3, 100, 3);">
+      © 2022 Copyright:
+      <a class="text-white" href="">Travelishq.com</a>
+  </div>
+</footer>
+ {% endblock %}

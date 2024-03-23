@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% load static %}
+<head>
+    <title>Travel Website</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link type="text/css" rel="stylesheet" href="/static/css/font-awesome.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,600i,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,500i,600,600i" rel="stylesheet">
+    
+    <style>
+        * {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    list-style-type: none;
+    text-decoration: none;
+}
+
+.container {
+    max-width: 1170px;
+    margin: 0 auto;
+    padding-left: 15px;
+    padding-right: 15px;
+
+}
+
+a {
+    font-family: 'raleway';
+    font-weight: 600;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'raleway';
+    font-weight: 600;
+}
+
+p {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+}
+
+.img-responsive {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+#arrow i {
+    position: fixed;
+    bottom: 20px;
+    right: 25px;
+    cursor: pointer;
+    background-color: #0f9015;
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50px;
+}
+
+/*header*/
+
+header {
+    background-color: rgb(51, 50, 50);
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 200px;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-blend-mode: overlay;
+    color: #fff;
+}
+
+
+.video {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+#video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+nav {
+    position: fixed;
+    z-index: 99;
+    width: 100%;
+    padding: 30px 0;
+    transition: all 0.5s ease;
+}
+.nav-fixed {
+    background-color: #111;
+    padding: 10px 0;
+    box-shadow: 7px 4px 13px #0f9015;
+}
+
+.nav-fixed h2 {
+    color: #0f9015;
+}
+
+.nav-fixed .nav ul a {
+    color: #fff;
+}
+
+.menu-par {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav ul li {
+    display: inline-block;
+}
+
+.nav ul a {
+    color: #fff;
+    padding: 10px;
+    position: relative;
+}
+
+.nav ul a:before {
+    content: "p";
+    background-color: #FF4500;
+    position: absolute;
+    top: 0;
+    width: 0%;
+    height: 2px;
+    font-size: 0px;
+    left: 10px;
+    transition: all 0.5s ease;
+}
+
+.nav ul a:hover:before {
+    width: 74%;
+}
+
+.home_header_info h1 {
+    font-size: 45px;
+    padding: 20px 0px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.logo-par h2 {
+    color: #fff;
+    font-size: 40px;
+}
+
+.home_header_info p {
+    font-size: 15px;
+    line-height: 30px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.home_header_info a {
+    background-color: #fff;
+    color: 	#0f9015;
+    text-decoration: none;
+    padding: 15px 35px;
+    margin-top: 25px;
+    display: inline-block;
+    font-size: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.home_header_info a:hover {
+    color: #fff;
+}
+
+.home_header_info a:after {
+    content: "More Info";
+    background-color: 	#0f9015;
+    width: 0%;
+    font-size: 15px;
+    height: 100%;
+    line-height: 50px;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 0.7s ease;
+    right: 0;
+}
+
+.home_header_info a:hover:after {
+    width: 100%;
+}
+
+.toggle-btn {
+    display: none;
+    color: #fff;
+}
+/*welcome Sec Css*/
+
+section#welcome_Sec {
+    background-color: #000;
+    text-align: center;
+    padding: 80px 0px;
+}
+
+section#welcome_Sec h2 {
+    color: rgb(255, 255, 255);
+    font-size: 42px;
+    font-weight: 600;
+    padding-bottom: 12px;
+}
+
+section#welcome_Sec p {
+    font-size: 21px;
+    color: 	#FF4500;
+    font-weight: 400;
+    line-height: 30px;
+}
+#prakash{
+    font-family: 'Roboto', sans-serif;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2)), url(static/images/road.jpg);
+    background-size: cover;
+    height: 70vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9em;
+}
+.card{
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.199);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    height: 350px;
+    width: 250px;
+    margin-right: 3rem;
+}
+.card:hover .gradient{
+    opacity: 2;
+}
+
+.gradient{
+    position: absolute;
+    background-image: linear-gradient(0deg, #FF4500, transparent);
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.info{
+    position: absolute;
+    color: #fff;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 2rem;
+    margin-top: 3rem;
+}
+
+.text{
+    color: rgb(211, 211, 211);
+}
+
+.time{
+    position: absolute;
+    bottom: 0;
+    color: #fff;
+    padding: 2rem;
+}
+
+.title{
+    font-size: 2.2em;
+    font-weight: 700;
+}
+
+
+/*footer*/
+footer {
+    border-top: 3px solid 	#0f9015;
+    background-color: #000;
+}
+.footer-1 h2 {
+    color: #0f9015;
+    font-size: 30px;
+}
+.fot-info h3 {
+    color: #f9feff;
+    font-size: 25px;
+    display: inline-block;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+}
+
+.fot-info ul {
+    list-style: none;
+}
+
+.fot-info ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 0px;
+    display: inline-block;
+    transition: all 0.6s ease;
+}
+
+.fot-info ul li a:hover {
+    padding-left: 5px;
+}
+
+.focontent {
+    text-align: center;
+    font-size: 14px;
+    background-color: 	#0f9015;
+    color: #fff;
+    padding: 14px 0px;
+    margin: 50px 0px 0px 0px;
+}
+
+.footer-par {
+    display: flex;
+    justify-content: space-between;
+    margin: 50px 0px 0px;
+}
+
+@media screen and (max-width:768px) {
+    .nav {
+        position: fixed;
+        background-color: #000;
+        width: 100%;
+        height: 100vh;
+        width: 100%;
+        top: 0;
+        left: -100%;
+        transition: all 0.5s ease;
+    }
+
+    .nav-active {
+        left: 0;
+    }
+
+    .toggle-btn i.nav-active:before {
+        content: "\f00d";
+    }
+
+    .nav ul li {
+        display: block;
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    .nav ul {
+        margin-top: 100px;
+    }
+
+    .toggle-btn {
+        display: block;
+        z-index: 1;
+    }
+
+    .home_header_info h1 {
+        font-size: 20px;
+        line-height: 30px;
+    }
+
+    .home_header_info p {
+        font-size: 14px;
+        line-height: 30px;
+        width: 100%;
+        margin: 0 auto;
+    }
+    
+    section#welcome_Sec {
+        text-align: center;
+        padding: 50px 0px 20px;
+    }
+
+    header {
+        padding: 0 40px;
+    }
+
+    section#welcome_Sec h2 {
+        font-size: 18px;
+    }
+
+    section#slides_parent {
+        padding-bottom: 50px;
+    }
+
+    .slide_info {
+        bottom: 21px;
+        transform: rotate(0deg);
+        left: 20px;
+        font-size: 19px;
+    }
+
+    .explore-content-par {
+        flex-direction: column;
+    }
+
+    .explore-info h3 {
+        font-size: 50px;
+        margin-bottom: 50px;
+        text-align: center;
+    }
+
+        .footer-par {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .explore-info {
+        margin: 0 auto;
+    }
+
+}
+
+@media screen and (max-width:950px) {}
+
+    </style>
+</head>
+<body>
+    <div id="arrow">
+        <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    </div>
+    <nav>
+        <div class="container">
+            <div class="menu-par">
+                <div class="logo-par">
+                    <a href="/">
+                        <h2>DogMEd</h2>
+                    </a>
+                </div>
+                <div class="nav">
+                    <ul>
+                        <li><a class="menu_hover" href="/">Home</a></li>
+                        <li><a class="menu_hover" href="/gallery">Gallery</a></li>
+                        <li><a class="menu_hover" href="/ngos">Ngo's</a></li>
+                        <li><a class="menu_hover" href="/blog">Blog</a></li>
+                        <li><a class="menu_hover" href="/user">Login</a></li>
+                        <li><a class="menu_hover" href="/about">About</a></li>
+                    </ul>
+                </div>
+                <div class="toggle-btn">
+                    <i class="fa fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header>
+        <div class="conatiner">
+            <div class="home_header_info">
+                <h1 class="typewrite" data-period="2000" data-type='["DOG CARE", "BOOK AN APPOINTMENT"]'></h1>
+               <div class="icon">
+                   <h2>All the Services are backed up by Doctors..</h2>
+                </div>
+                <p>PET SHOP, PET PROFILE, BOOK APPOINTMENT</p>
+                <a href="/">Read More</a>
+            </div>
+        </div>
+        <div class="video">
+            <video id="video" autoplay loop muted>
+                <source type="video/mp4" src="/static/images/travelishq.mp4" />
+            </video>
+        </div>
+    </header>
+
+    <Section id="welcome_Sec">
+        <div class="container">
+            <h2><span>Dog med website is Here</span></h2>
+            <p>Dog Med</p>
+        </div>
+    </Section>
+
+    <container id="prakash">
+        <div class="card">
+        <a href="/">
+            <div class="gradient"></div>
+            <div class="info">
+                <div class="text">/DogMed/</div>
+                <div class="title">WUF </div>
+            </div>
+            <div class="time">Dog <span>Med</span></div>
+        </a>
+        </div>
+    
+        <div class="card">
+        <a href="/home">
+            <div class="gradient" style="background-image: linear-gradient(0deg, #1f7c07f5,transparent);"></div>
+            <div class="info">
+                <div class="text">/DogMEd/</div>
+                <div class="title">Book an Appointment</div>
+            </div>
+            <div class="time">Dog <span>Med</span></div>
+        </a>
+        </div>
+    
+        <div class="card">
+        <a href="/">
+            <div class="gradient" style="background-image: linear-gradient(0deg, #009ece,transparent);"></div>
+            <div class="info">
+                <div class="text">/DogMEd/</div>
+                <div class="title">WUF</div>
+            </div>
+            <div class="time">Dog<span>Med</span></div>
+        </a>
+        </div>
+    </container>
+
+    
+  
+
+    <footer>
+        <div class="container">
+            <div class="footer-par">
+                <div class="footer-1">
+                    <h2>DogMed Your Own</h2>
+                </div>
+                <div class="footer-2 fot-info">
+                    <h3>Features</h3>
+                    <ul>
+                        <li><a href="#">To-do list</a></li>
+                        <li><a href="#">Feedback</a></li>
+                    </ul>
+                </div>
+                <div class="footer-3 fot-info">
+                    <h3>Rescue Dog</h3>
+                    <ul>
+                        <li><a href="/">Rescue Dog</a></li>
+                        <li><a href="/">Add/Regsiter</a></li>
+                    </ul>
+                </div>
+                <div class="footer-4 fot-info">
+                    <h3>Doctor</h3>
+                    <ul>
+                        <li><a href="/plan">Plan</a></li>
+                        <li><a href="/travelguide">Doctor Guide</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <p class="focontent">© 2024 Copyright: DogMed</p>
+    </footer>
+
+    <script type="text/javascript" src="/static/js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="/static/js/extrenaljq.js"></script>
+</body>
+
+</html>

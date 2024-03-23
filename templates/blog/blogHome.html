@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+{% block title %} BlogHome {% endblock title %}
+{% block blogactive %} active {% endblock blogactive %} 
+
+
+{% block body %}
+<div class="container my-3">
+    <div class="text-center">
+        <h2>Dog Med</h2>
+        <p>Looking for something useful to read about NGO's in India? 
+            You’ve come to the right place. Join interesting  tips and ideas and daily inspiration.</p>
+    </div>
+    {% for post in allPosts  %}
+    <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 my-4 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+            <strong class="d-inline-block mb-2 text-primary">Article  by {{post.author}}</strong>
+            <h3 class="mb-0">{{post.title}}</h3>
+            <div class="mb-1 text-muted">{{post.datetime}}</div>
+            <p class="card-text mb-auto">{{post.content| truncatechars:300}}</p>
+            <div class="my-2">
+            	<a href="/blog/{{post.slug}}" role="button" class="btn btn-success">Continue reading</a>
+            </div>
+            
+        </div>
+        <div class="col-auto d-none d-lg-block">
+            <img src="https://source.unsplash.com/random" class="bd-placeholder-img" width="250" height="250"  preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Photo">
+        </img>
+        </div>
+        </div>
+
+        {% endfor %}
+    </div>
+    
+ <footer class=" text-center text-white " style="background-color: black;">
+    <!-- Grid container -->
+    <div class="container p-4">
+        <!--Grid row-->
+        <div class="row">
+            <!--Grid column-->
+            <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+                <h5 class="font-italic">DogMed</h5>
+                <p>------------------------ </p>
+            </div>
+            <!--Grid column-->
+  
+            <!--Grid column-->
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                <div class="container">
+                    <!-- Section: Iframe --> 
+                    <section class="">
+                        <div class="row d-flex justify-content-center">
+                            <div class="col-lg-6">
+                                <div class="ratio ratio-16x9">
+                                    <iframe class="shadow-1-strong rounded " src=" " title="YouTube video"
+                                        allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- Section: Iframe -->
+                </div>
+            </div>
+            <!--Grid column-->
+        </div>
+        <!--Grid row-->
+    </div>
+    <div class="text-center p-3" style="background-color: rgb(3, 100, 3);">
+        © 2022 Copyright:
+        <a class="text-white" href="">DogMed.com</a>
+    </div>
+  </footer>
+ {% endblock %}
+
+ 

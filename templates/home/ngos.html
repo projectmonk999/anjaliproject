@@ -1,0 +1,149 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+    <title>NGO</title>
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/css/form-validation.css" rel="stylesheet">
+  </head>
+<body class="bg-light" style="font-size:medium">
+    
+<div class="container">
+  <main>
+    <div class="py-5 text-center">
+      <h1> DogMed </h1> <br><br>
+      <h3>Get in touch with NGOs</h3>
+      <p class="lead">Extend a Helping Hand to Those in Need</p>
+      <hr class="my-4">
+    </div>
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-5 ">
+        <div class="col-md-3 col-lg-2"></div>
+        <div class="col-md-7 col-lg-8">
+          <h2 class="centertext">Donate for NGO</h2><br><br>
+          <h4 class="mb-3">Select State :</h4>
+          <div class="row g-3">
+            <div class="col-md-6">
+              <select class="form-select" id="state" required>
+                <option value="">Choose...</option>
+                <option>Arunachal Pradesh</option>
+                <option>Delhi</option>
+                <option>Gujarat</option>
+                <option>Kerela</option>
+                <option>Punjab</option>
+                <option>Rajasthan</option>
+              </select><br>
+              <div class="invalid-feedback">
+                Please select a valid state.
+              </div>
+            </div>
+            <hr class="my-1">
+            <div class="container" id="ngo">
+              <div class="row g-3">
+                <div class="col-sm-4">
+                  Name Of NGO:
+                </div>
+                <div class="col-sm-4" >
+                  Objective
+                </div>
+                <div class="col-sm-4">
+                  Donation Link<br>
+                </div>
+              </div>
+            </div>
+            <hr class="my-1">
+           <div class="container">
+            <dl class="row g-3">
+              <dt class="col-sm-4">Smile Foundation</dt>
+              <dd class="col-sm-4">Education, Healthcare, Livelihood, Women Empowerment.</dd>
+              <dd class="col-sm-4 centertext"><a target="_blank" href="https://www.smilefoundationindia.org/register.asp" >Link</a></dd>
+
+              <dt class="col-sm-4">Friendicoes</dt>
+              <dd class="col-sm-4">Animal Shelters & Hospitals.</dd>
+              <dd class="col-sm-4 centertext"><a target="_blank" href="https://friendicoes.org/onlinedonation/" >Link</a></dd>
+              
+              <dt class="col-sm-4" >Plan India</dt>
+              <dd class="col-sm-4">Adolescent health,Maternal health,Child Survival,Sanitation, Hygiene, Youth employment</dd>
+              <dd class="col-sm-4 centertext"><a target="_blank" href="https://www.planindia.org/get-involved/make-a-donation/" >Link</a></dd>
+            
+              <dt class="col-sm-4">Teach for India</dt>
+              <dd class="col-sm-4">Eliminating Educational Inequity in India.</dd>
+              <dd class="col-sm-4 centertext"><a target="_blank" href="https://www.teachforindia.org/donate" >Link</a></dd>
+            </dl>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-1">
+
+      </div>
+      <div class="col-md-5 ">
+        <div class="col-md-3 col-lg-2"></div>
+          <div class="col-md-7 col-lg-8">
+            <h2 class="centertext">Join a NGO</h2><br><br>
+            <h4 class="mb-3">Select State :</h4>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <select class="form-select" id="state" required>
+                  <option value="">Choose...</option>
+                  <option>Arunachal Pradesh</option>
+                  <option>Delhi</option>
+                  <option>Gujarat</option>
+                  <option>Kerela</option>
+                  <option>Punjab</option>
+                  <option>Rajasthan</option>
+                </select><br>
+                <div class="invalid-feedback">
+                  Please select a valid state.
+                </div>
+              </div>
+
+              <hr class="my-1">
+
+              <div class="container" id="ngo">
+                <div class="row g-3">
+                  <div class="col-sm-4">
+                    Name Of NGO:
+                  </div>
+                  <div class="col-sm-4" >
+                    Objective
+                  </div>
+                  <div class="col-sm-4">
+                    Donation Link<br>
+                  </div>
+                </div>
+              </div>
+              <hr class="my-1">
+
+             <div class="container" id="ngotext">
+              <dl class="row g-3">
+                <dt class="col-sm-4">Smile Foundation</dt>
+                <dd class="col-sm-4">Education, Healthcare, Livelihood, Women Empowerment.</dd>
+                <dd class="col-sm-4 centertext"><a target="_blank" href="https://www.smilefoundationindia.org/volunteers.asp" >Link</a></dd>
+  
+                <dt class="col-sm-4">Friendicoes</dt>
+                <dd class="col-sm-4">Animal Shelters & Hospitals.</dd>
+                <dd class="col-sm-4 centertext"><a target="_blank" href="https://friendicoes.org/volunteering-friendicoes/" >Link</a></dd>
+                
+                <dt class="col-sm-4" >Plan India</dt>
+                <dd class="col-sm-4">Adolescent health,Maternal health,Child Survival,Sanitation, Hygiene, Youth employment</dd>
+                <dd class="col-sm-4 centertext"><a target="_blank" href="https://www.planindia.org/get-involved/work-with-us/internship/" >Link</a></dd>
+              
+                <dt class="col-sm-4">Teach for India</dt>
+                <dd class="col-sm-4">Eliminating Educational Inequity in India.</dd>
+                <dd class="col-sm-4 centertext"><a target="_blank" href="https://www.teachforindia.org/volunteer" >Link</a></dd>
+              </dl>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div> 
+    <br><br>
+  </main>
+
+    <script src="/static/js/bootstrap.bundle.min.js"></script>
+
+      <script src="/static/js/form-validation.js"></script>
+  </body>
+</html>

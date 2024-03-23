@@ -1,0 +1,29 @@
+.header{
+    font-size: 64px;
+    text-align: center;
+    font-family:'Pacifico' ;
+    font-weight: 100;
+    color: rgb(27, 119, 68);
+    background-color: rgb(17, 69, 138);
+}
+.filter{
+    width:20%;
+    margin-left:1050px;
+    margin-bottom: 10px;
+}
+.image{
+    height: 300px;
+    width: 700px;
+}
+.images{
+    margin-top: 20px;
+    text-align: center;
+}
+.cardhead{
+     font-size: 40px;
+     text-decoration: solid;
+     font-family: 'Sansita Swashed';
+}
+.sfood{
+    font-family:'Times New Roman', Times, serif;
+}

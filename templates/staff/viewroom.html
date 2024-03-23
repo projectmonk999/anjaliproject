@@ -1,0 +1,57 @@
+{% extends 'basic.html' %} {% block title %}View Events {% endblock title %} {% block body %}
+ 
+<table class="table text-white my-2">
+   <thead>
+       <th>Event Code</th>
+       <th>Event Type</th>
+       <th>Total Person</th>
+       <th>Facilities</th>
+       <th>Status</th>
+       <th>City</th>
+       <th>State</th>
+       <th>Country</th>
+   </thead>
+   <tr>
+       <td>{{room.roomnumber}}</td>
+       <td>{{room.get_room_type_display}}</td>
+       <td>{{room.capacity}} Person</td>
+       <td>{{room.size}}</td>
+       <td>{{room.get_status_display| capfirst}}</td>
+       <td>{{room.hotel.location| capfirst}}</td>
+       <td>{{room.hotel.state| capfirst}}</td>
+       <td>{{room.hotel.country| capfirst}} </td>
+   </tr>
+</table>
+<div class="card text-center" style="background-color: black;">
+   <div class="card-body">
+     <a href="#" class="btn btn-success">Total Booking : {{reservations | length}}</a>
+   </div>
+ </div>
+
+
+<hr> {% if reservations %}
+<table class="table text-white">
+   <thead>
+       <th>Event Name</th>
+       <th>Event Code</th>
+       <th>Username</th>
+       <th>Facilities</th>
+       <th>City</th>
+       <th>Start Date</th>
+       <th>End Date</th>
+   </thead>
+   {% for each_detail in reservations %}
+   <tr>
+       <td>{{each_detail.room.room_type}}</td>
+       <td>{{each_detail.room.roomnumber}}</td>
+       <td>{{each_detail.guest.username}}</td>
+       <td>{{room.size}}</td>
+       <td>{{room.hotel.location| capfirst}}</td>
+       <td>{{each_detail.check_in}}</td>
+       <td>{{each_detail.check_out}}</td>
+   </tr>
+   {% endfor %}
+</table>
+{% else %}
+<p>No details found</p>
+{% endif %} {% endblock body %}
